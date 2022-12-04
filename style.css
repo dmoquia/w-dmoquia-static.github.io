@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* primary */
+  --softOrange: hsl(35, 77%, 62%);
+  --softRed: hsl(5, 85%, 63%);
+  /* neutral */
+  --offWhite: hsl(36, 100%, 99%);
+  --grayishBlue: hsl(233, 8%, 79%);
+  --darkGrayBlue: hsl(236, 13%, 42%);
+  --veryDarkBlue: hsl(240, 100%, 5%);
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+}
+
+.nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-container img {
+  padding: 20px;
+}
+
+.btn-menu {
+  padding: 20px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style-type: none;
+}
+.nav-links li {
+  margin: 10px 0;
+  padding: 10px 0;
+}
+.nav-links li a:hover {
+  color: var(--softOrange);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: none;
+  transition: transform 1s ease;
+  margin-left: 10rem;
+  padding-left: 2rem;
+}
+
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.banner-img {
+  width: 700px;
+  height: 540px;
+}
+img {
+  width: 100%;
+}
+.banner-side {
+  width: 400px;
+  height: 500px;
+  padding: 20px;
+  background: var(--veryDarkBlue);
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.banner-side h1 {
+  color: var(--softOrange);
+  text-transform: capitalize;
+}
+.banner-side a {
+  display: block;
+  color: var(--offWhite);
+  margin: 10px 0;
+}
+.banner-side a:hover {
+  color: var(--softOrange);
+}
+.banner-side p {
+  color: var(--darkGrayBlue);
+}
+hr {
+  border: none;
+  height: 1px;
+  background: var(--darkGrayBlue);
+  margin-top: 30px;
+}
+
+.banner-text {
+  display: flex;
+  height: 350px;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.banner-text h1 {
+  font-weight: 900;
+  font-size: 45px;
+}
+.banner-text p {
+  padding: 20px 0;
+}
+.banner-text p a {
+  padding: 10px 40px;
+  background: var(--softRed);
+  color: var(--offWhite);
+  text-transform: uppercase;
+}
+
+.banner-text p a:hover {
+  background: var(--veryDarkBlue);
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  padding-top: 45px;
+}
+
+article {
+  display: flex;
+  padding: 15px 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+article .img-container {
+  width: 100px;
+  margin-right: 15px;
+}
+.img-container img {
+  max-width: 100%;
+}
+.text-article {
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 235px;
+  padding-right: 10px;
+}
+
+.text-article h1 {
+  color: var(--grayishBlue);
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.text-article a {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+.text-article a:hover {
+  color: var(--softRed);
+}
+
+.navbar .btn-close {
+  display: none;
+  transition: display 2s ease, 1s;
+  cursor: pointer;
+}
+
+.body-blue {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+@media only screen and (max-width: 576px) {
+  .navbar .nav-links {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: var(--offWhite);
+    display: flex;
+    padding-top: 7rem;
+    flex-direction: column;
+    transform: translateX(100%);
+  }
+
+  .navbar .btn-close {
+    position: fixed;
+    transform: translateX(100%);
+    padding: 20px;
+    display: flex;
+    top: 0;
+    right: 0;
+    z-index: 3;
+  }
+  .navbar .show-close {
+    transform: translateX(0);
+  }
+  .navbar .show-links {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  nav {
+    justify-content: space-around;
+  }
+  .btn-menu {
+    display: none;
+  }
+
+  .banner-side {
+    flex: 0 0 auto;
+  }
+  .banner-text {
+    flex-wrap: nowrap;
+  }
+  .banner-text p {
+    padding-left: 40px;
+  }
+  .banner-img {
+    margin: 0 25px;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-links li {
+    padding: 25px;
+  }
+  section {
+    justify-content: center;
+    padding-top: 0;
+  }
+  article {
+    padding: 0;
+  }
+}
